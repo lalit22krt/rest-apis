@@ -3,6 +3,9 @@ var router = express.Router();
 var postsRouter = require('./posts')
 var commentsRouter = require('./comments')
 
+router.get('/', (req, res) => {
+    res.status(200).send('Hello there!')
+})
 router.get('/posts', postsRouter.getPosts)
 router.get('/posts/:id', postsRouter.getPost)
 router.post('/posts', postsRouter.addPost)
